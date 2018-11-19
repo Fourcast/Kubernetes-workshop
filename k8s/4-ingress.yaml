@@ -1,0 +1,11 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ing-hello-kubernetes
+#  annotations:
+#    kubernetes.io/ingress.global-static-ip-name: website-static-ip
+spec:
+  backend:
+    serviceName: svc-hello-kubernetes
+    servicePort: 80

@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'eu.gcr.io/k8s-fourcast/hello-kube', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'eu.gcr.io/k8s-fourcast/hello-kube']
+images: ['eu.gcr.io/k8s-fourcast/hello-kube']

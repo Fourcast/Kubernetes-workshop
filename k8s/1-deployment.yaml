@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: eu.gcr.io/k8s-fourcast/hello-kube:latest
+        image: eu.gcr.io/k8s-fourcast/hello-kube:0.2
         resources:
           limits:
             cpu: "0.1"

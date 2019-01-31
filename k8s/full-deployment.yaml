@@ -14,7 +14,7 @@ spec:
         image: eu.gcr.io/codacy-host-run-9/hello-kube/DEPLOY_ENV
         resources:
           limits:
-            cpu: "0.1"
+            cpu: "0.3"
             memory: 100Mi
         livenessProbe:
           httpGet:

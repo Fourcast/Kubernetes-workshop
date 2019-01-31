@@ -16,9 +16,9 @@
 steps:
 
 - name: 'ubuntu'
-  args: ["sed","-i","s/DEPLOY_ENV/${_ENV}/g","deployment/deployment.yaml"]
+  args: ["sed","-i","s/DEPLOY_ENV/${_ENV}/g","k8s/full-deployment.yaml"]
 
 - name: gcr.io/cloud-builders/gsutil
-  args: ['cp', 'deployment/deployment.yaml', 'gs://$PROJECT_ID-spinnaker/deployments/hello-kube/${_ENV}/deployment.yaml']
+  args: ['cp', 'k8s/full-deployment.yaml', 'gs://$PROJECT_ID-spinnaker/deployments/hello-kube/${_ENV}/deployment.yaml']
 
 logsBucket: 'gs://$PROJECT_ID-cloudbuild'

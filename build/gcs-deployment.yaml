@@ -1,0 +1,24 @@
+#######
+#
+# Cloud Build Config file
+# Triggers:
+#  - gcs-fdm-scheduler-k8s-resources-dev
+#  - gcs-fdm-scheduler-k8s-resources-prod
+# 
+#  Purpose:
+#   When a K8S resource file has changed, copy it into the bucket that is monitored by Pub/Sub
+#   to trigger a new Spinnaker deploy.
+#
+#   Substitution variables:
+#   - _ENV: environment to store onto GCS. Will trigger only that environments Spinnaker pipeline.
+#
+#######
+steps:
+
+- name: 'ubuntu'
+  args: ["sed","-i","s/DEPLOY_ENV/${_ENV}/g","deployment/deployment.yaml"]
+
+- name: gcr.io/cloud-builders/gsutil
+  args: ['cp', 'deployment/deployment.yaml', 'gs://$PROJECT_ID-spinnaker/deployments/hello-kube/${_ENV}/deployment.yaml']
+
+logsBucket: 'gs://tvh-host-dryrun-3-cloudbuild'

@@ -9,5 +9,5 @@ spec:
     kind: Deployment
     name: deploy-hello-kubernetes
   minReplicas: 1
-  maxReplicas: 10
+  maxReplicas: 1000
   targetCPUUtilizationPercentage: 10

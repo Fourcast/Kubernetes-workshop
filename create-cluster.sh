@@ -1,5 +1,5 @@
- PROJECT_NAME=k8s-fourcast
- CLUSTER_NAME=pega88-sandbox
+ PROJECT_NAME=pxl-k8s
+ CLUSTER_NAME=niels-sandbox
  CLUSTER_REGION=europe-west1
  CLUSTER_ZONE=europe-west1-d
  gcloud config set project $PROJECT_NAME

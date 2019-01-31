@@ -21,4 +21,4 @@ steps:
 - name: gcr.io/cloud-builders/gsutil
   args: ['cp', 'deployment/deployment.yaml', 'gs://$PROJECT_ID-spinnaker/deployments/hello-kube/${_ENV}/deployment.yaml']
 
-logsBucket: 'gs://tvh-host-dryrun-3-cloudbuild'
+logsBucket: 'gs://$PROJECT_ID-cloudbuild'

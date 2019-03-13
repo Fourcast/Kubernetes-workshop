@@ -4,6 +4,7 @@ kind: Service
 metadata:
   name: svc-qotm
 spec:
+  type: NodePort
   selector:
     app: qotm
   ports:

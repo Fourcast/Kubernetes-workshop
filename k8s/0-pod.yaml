@@ -6,6 +6,6 @@ metadata:
 spec:
   containers:
   - name: hello-kubernetes
-    image: eu.gcr.io/pega88-sandbox/hello-kube:0.2
+    image: #
     ports:
     - containerPort: 5000

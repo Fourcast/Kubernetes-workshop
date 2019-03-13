@@ -11,18 +11,18 @@ spec:
     spec:
       containers:
       - name: hello-kubernetes
-        image: eu.gcr.io/pega88-sandbox/hello-kube:0.2
+        image: #
         resources:
           limits:
             cpu: "0.1"
             memory: 100Mi
         livenessProbe:
           httpGet:
-            path: /health
+            path: #
             port: 5000
         readinessProbe:
           httpGet:
-            path: /health
+            path: #
             port: 5000
           initialDelaySeconds: 5
           periodSeconds: 5

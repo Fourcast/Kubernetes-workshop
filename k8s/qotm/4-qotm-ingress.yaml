@@ -1,0 +1,9 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ing-qotm
+spec:
+  backend:
+    serviceName: svc-qotm
+    servicePort: 80

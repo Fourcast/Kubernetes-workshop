@@ -1,4 +1,5 @@
  #!/bin/bash
+ #setup
  PROJECT_NAME=fourcast-gke-demo
  CLUSTER_NAME=scale-with-k8s
  CLUSTER_REGION=europe-west1

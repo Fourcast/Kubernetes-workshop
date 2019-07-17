@@ -1,0 +1,8 @@
+steps:
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'eu.gcr.io/fourcast-gke-demo/hello-kube:0.2', 'app']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'eu.gcr.io/fourcast-gke-demo/hello-kube:0.2']
+images: ['eu.gcr.io/fourcast-gke-demo/hello-kube']

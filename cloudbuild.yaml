@@ -1,8 +1,13 @@
 steps:
-- name: 'python:3-alpine'
+- name: 'python:3.7.4-stretch'
   args: ['pip','install','-r','requirements.txt']
+
+- name: 'python:3.7.4-stretch'
+  args: ['pytest','test.py']
+
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'eu.gcr.io/advise-inno-host/hello-kube:$SHORT_SHA', 'app']
+  
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'eu.gcr.io/advise-inno-host/hello-kube:$SHORT_SHA']
 images: ['eu.gcr.io/advise-inno-host/hello-kube']

@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'eu.gcr.io/pega88-sandbox/hello-kube:0.2', '.']
+  args: ['build', '-t', 'eu.gcr.io/advise-inno-host/hello-kube:0.2', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'eu.gcr.io/pega88-sandbox/hello-kube:0.2']
-images: ['eu.gcr.io/pega88-sandbox/hello-kube']
+  args: ['push', 'eu.gcr.io/advise-inno-host/hello-kube:0.2']
+images: ['eu.gcr.io/advise-inno-host/hello-kube']

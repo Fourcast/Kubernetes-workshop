@@ -3,7 +3,8 @@
 import os
 import datetime
 
-from flask import Flask, jsonify
+
+from flask import Flask, jsonify, render_template
 import math
 
 app = Flask(__name__)
@@ -29,6 +30,9 @@ def create_bug():
     buggy_code = True
     return "Bug was introduced!", 200
 
+@app.route('/ui', methods=["GET"])
+def root():
+    return render_template('index.html')
 
 @app.route("/load", methods=["GET"])
 def load():

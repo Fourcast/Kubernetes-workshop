@@ -13,7 +13,8 @@ buggy_code = False
 
 @app.route("/", methods=["GET"])
 def hello():
-    return "Hello from Kubernetes!", 200
+    return "Hello from " + os.getenv('MY_POD_NAME', "Kubernetes!"), 200
+
 
 @app.route("/health", methods=["GET", "HEAD"])
 def health():

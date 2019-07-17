@@ -7,4 +7,4 @@ def test_response():
     """Start with a blank database."""
     client = app.test_client()
     rv = client.get('/')
-    assert b'Hello from Kubernetes!' in rv.data
+    assert b'Hello from Kubernetes' in rv.data

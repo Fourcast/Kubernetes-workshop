@@ -8,4 +8,3 @@ def test_response():
     client = app.test_client()
     rv = client.get('/')
     assert b'Hello from Kubernetes!' in rv.data
-    #assert b'Hello from mom!' in rv.data

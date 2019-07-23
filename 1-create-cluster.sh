@@ -8,8 +8,10 @@
  gcloud config set project $PROJECT_NAME
  gcloud config set compute/region $CLUSTER_REGION
  gcloud config set compute/zone $CLUSTER_ZONE
- gcloud container clusters create $CLUSTER_NAME \
+ gcloud beta container clusters create $CLUSTER_NAME \
  	--num-nodes 3 \
+ 	--addons=HorizontalPodAutoscaling,HttpLoadBalancing,Istio,CloudRun \
+ 	--enable-stackdriver-kubernetes \
     --enable-autoscaling \
     --min-nodes 3 \
     --max-nodes 50

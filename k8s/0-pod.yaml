@@ -6,6 +6,10 @@ metadata:
 spec:
   containers:
   - name: hello-kubernetes
+<<<<<<< HEAD
     image: #
+=======
+    image: eu.gcr.io/fourcast-gke-demo/hello-kube:0.2
+>>>>>>> develop
     ports:
     - containerPort: 5000

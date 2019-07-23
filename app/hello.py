@@ -3,7 +3,8 @@
 import os
 import datetime
 
-from flask import Flask, jsonify
+
+from flask import Flask, jsonify, render_template
 import math
 
 app = Flask(__name__)
@@ -12,7 +13,8 @@ buggy_code = False
 
 @app.route("/", methods=["GET"])
 def hello():
-    return "Hello from Kubernetes!", 200
+    return "Hello from " + os.getenv('MY_POD_NAME', "Kubernetes!"), 200
+
 
 @app.route("/health", methods=["GET", "HEAD"])
 def health():
@@ -29,6 +31,9 @@ def create_bug():
     buggy_code = True
     return "Bug was introduced!", 200
 
+@app.route('/ui', methods=["GET"])
+def root():
+    return render_template('index.html')
 
 @app.route("/load", methods=["GET"])
 def load():
@@ -42,7 +47,8 @@ def load():
 
 
 def main():
-    app.run(debug=False, host="0.0.0.0")
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0",port=port)
 
 
 if __name__ == "__main__":

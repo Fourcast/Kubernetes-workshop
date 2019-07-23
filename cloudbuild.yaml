@@ -1,6 +1,10 @@
 steps:
+- name: 'python:3.7.4-stretch'
+  args: ['bash','app/run-tests.sh']
+
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'eu.gcr.io/pega88-sandbox/hello-kube:0.2', '.']
+  args: ['build', '-t', 'eu.gcr.io/advise-inno-host/hello-kube:$SHORT_SHA', 'app']
+
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'eu.gcr.io/pega88-sandbox/hello-kube:0.2']
-images: ['eu.gcr.io/pega88-sandbox/hello-kube']
+  args: ['push', 'eu.gcr.io/advise-inno-host/hello-kube:$SHORT_SHA']
+images: ['eu.gcr.io/advise-inno-host/hello-kube']
